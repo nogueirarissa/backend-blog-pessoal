@@ -1,17 +1,13 @@
 package org.generation.blogPessoal.model;
-
-import java.util.Date;
+import java.time.LocalDateTime;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-
+import org.hibernate.annotations.UpdateTimestamp;
 
 
 @Entity
@@ -20,7 +16,7 @@ public class Postagem {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 	
 	@NotNull(message = "O atributo título é obrigatório!")
 	@Size(min = 5, max = 100, message = "o atributo título deve conter no mínimo 05 e no máximo 100 caracteres")	
@@ -30,10 +26,10 @@ public class Postagem {
 	@Size(min = 5, max = 100, message = "o atributo título deve conter no mínimo 05 e no máximo 100 caracteres")
 	private String texto;
 	
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date date = new java.sql.Date(System.currentTimeMillis());
+	@UpdateTimestamp
+	private LocalDateTime date;
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
@@ -57,12 +53,14 @@ public class Postagem {
 		this.texto = texto;
 	}
 
-	public Date getDate() {
+	public LocalDateTime getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(LocalDateTime date) {
 		this.date = date;
 	}
+
+	
 	
 }
