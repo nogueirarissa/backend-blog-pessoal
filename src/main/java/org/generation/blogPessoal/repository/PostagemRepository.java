@@ -10,5 +10,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PostagemRepository extends JpaRepository<Postagem, Long>{
 	public List<Postagem> findAllByTituloContainingIgnoreCase(@Param("titulo") String titulo);
+	
+	public List<Postagem>findAllByTextoContainingIgnoreCase(@Param("texto") String texto);
 }
 //o JPA lê essa função como SELECT * FROM tb_postagem WHERE titulo LIKE "%%", o Titulo é definido na model de postagem

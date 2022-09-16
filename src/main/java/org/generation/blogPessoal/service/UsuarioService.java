@@ -16,6 +16,7 @@ import org.springframework.web.server.ResponseStatusException;
 @Service
 public class UsuarioService {
 	
+	//a injeção de dependência vai ficar responsável por comunicar esta camada com a repository.
 	@Autowired
 	private UsuarioRepository userRepository;
 	
