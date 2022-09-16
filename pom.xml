@@ -6,13 +6,13 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.7.3</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.generation</groupId>
-	<artifactId>blogPessoal</artifactId>
+	<artifactId>blogpessoal</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>blogPessoal</name>
-	<description>Demo project for Spring Boot</description>
+	<name>blogpessoal</name>
+	<description>Projeto Blog Pessoal</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -50,15 +50,24 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		
-		<!-- Dependência para o Banco de dados H2 -->
+		<!-- Dependência Banco de dados H2 -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		
-		<!-- Configuração do JUnit -->
+		<!-- Dependência Banco de dados PostgreSQL -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+		</dependency> 
+		<!-- Dependência Spring Doc - Swagger -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.6.11</version>
+		</dependency>
+		<!-- Dependência Spring Boot Test -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -69,12 +78,6 @@
 					<artifactId>junit-vintage-engine</artifactId>
 				</exclusion>
 			</exclusions>
-		</dependency>
-		<!-- Dependência Spring Doc - Swagger -->
-		<dependency>
-			<groupId>org.springdoc</groupId>
-			<artifactId>springdoc-openapi-ui</artifactId>
-			<version>1.6.9</version>
 		</dependency>
 	</dependencies>
 
